@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/128/831/831268.png" type="image/x-icon">
+  <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+  <title>Weather Application</title>
+</head>
+
+<body>
+
+  <form action="/form_submit" method="post">
+    <input type=" text" name="name" id="name" placeholder="Enter City Name" autocomplete="off">
+    <input type="submit" value="Search" id="submit">
+  </form>
+
+  <div class="parent">
+    <div class="child">
+      <p class="location"><i class='fas fa-map-marker-alt' style='font-size:30px'></i>&ensp;{{loc}}, {{vatan}}</p>
+      <p>
+        <span id="date">11 </span> <span> | </span>
+        <span id="monthHTML">AUG</span>
+      </p>
+      <p class="temp">{{temp}} {{degree}}</p>
+      <p id="description">{{desc}}</p>
+      <p class="tempMin_Max">MIN: {{min}} | MAX: {{max}}</p>
+
+    </div>
+  </div>
+
+  <script>
+
+    const months = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
+
+    const mon = new Date();
+    let month = months[mon.getMonth()];
+
+    const collection = document.getElementById("monthHTML");
+    collection.innerHTML = month;
+
+
+    const dt = new Date();
+    document.getElementById("date").innerHTML = dt.getDate();
+  </script>
+</body>
+
+
+
+
+</html>
